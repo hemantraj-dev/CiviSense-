@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: civisense
+    env: node
+    plan: free
+    buildCommand: ""
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: NODE_ENV
+        value: production

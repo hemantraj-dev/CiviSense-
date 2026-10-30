@@ -1,0 +1,18 @@
+[Unit]
+Description=CIVISENSE Smart Urban Waterlogging Intelligence Platform
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/civisense
+ExecStart=/usr/bin/node /var/www/civisense/server.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=civisense
+Environment=NODE_ENV=production PORT=8000
+
+[Install]
+WantedBy=multi-user.target
